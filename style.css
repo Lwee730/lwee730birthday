@@ -44,8 +44,8 @@ body, html {
 }
 .bg-image {
   position: fixed;
-  top: 5;
-  left: 5;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   object-fit: cover;

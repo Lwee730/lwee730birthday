@@ -13,35 +13,20 @@ body, html {
   color: white;
 }
 
-.bg-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-.text-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.text-overlay h1 {
-  font-size: 3rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.text-overlay p {
-  font-size: 1.5rem;
-  opacity: 0.8;
-
-}
 .bg-image {
   position: fixed;
   top: 0;
@@ -52,7 +37,13 @@ body, html {
   z-index: -1;
 }
 
-h2{
-  font-size:2vw;
-  color:#9f5fff;
+h1 {
+  font-size: 5vw;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2vw;
+  color: #9f5fff;
+  margin-top: 1rem;
 }

@@ -26,5 +26,23 @@
     <!-- 正文内容 -->
     <h1>LWEE0730</h1>
     <h2>One more thing</h2>
+
+
+    <script>
+  document.addEventListener('click', function playMedia() {
+    const audio = document.getElementById('bg-music');
+    const video = document.getElementById('bg-video');
+
+    if (audio) {
+      audio.play().catch(() => {});
+    }
+
+    if (video) {
+      video.play().catch(() => {});
+    }
+    
+    document.removeEventListener('click', playMedia);
+  });
+</script>
   </body>
 </html>

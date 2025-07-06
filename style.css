@@ -1,20 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apple</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- 视频背景 -->
-    <video autoplay muted loop playsinline class="bg-video">
-      <source src="assets/iphone-ad.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+/* 视频背景样式 */
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
 
-    <!-- 正文内容 -->
-    <h1>LWEE0730</h1>
-    <h2>One more thing.</h2>
-  </body>
-</html>
+/* 页面整体居中样式 */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 标题样式 */
+h1 {
+  font-size: 5vw;
+  margin: 0;
+}
+
+/* 副标题样式 */
+h2 {
+  font-size: 2vw;
+  color: #9f5fff;
+  margin-top: 1rem;
+}

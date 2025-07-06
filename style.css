@@ -40,13 +40,19 @@ body, html {
 .text-overlay p {
   font-size: 1.5rem;
   opacity: 0.8;
+
 }
 .bg-image {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 5;
+  left: 5;
   width: 100vw;
   height: 100vh;
   object-fit: cover;
   z-index: -1;
+}
+
+h2{
+  font-size:2vw;
+  color:#9f5fff;
 }

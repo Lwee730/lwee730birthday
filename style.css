@@ -1,19 +1,16 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* 背景图样式 */
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
 }
 
-body, html {
-  height: 100%;
-  width: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  overflow: hidden;
-  background: black;
-  color: white;
-}
-
-.body {
+/* 页面整体居中样式 */
+body {
   margin: 0;
   padding: 0;
   background-color: black;
@@ -27,21 +24,13 @@ body, html {
   align-items: center;
 }
 
-.bg-image {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-}
-
+/* 标题样式 */
 h1 {
   font-size: 5vw;
   margin: 0;
 }
 
+/* 副标题样式 */
 h2 {
   font-size: 2vw;
   color: #9f5fff;

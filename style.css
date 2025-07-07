@@ -65,6 +65,14 @@ h2 {
 
 /* 淡出类名 */
 .fade-out {
-  opacity: 0;
-  transition:opacity 2s ease-in-out;
+  animation: fadeDisappear 2s ease-in-out forwards;
 }
+
+@keyframes fadeDisappear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }

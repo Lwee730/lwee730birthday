@@ -13,27 +13,12 @@
 </audio>
     
     <script>
-  document.addEventListener('click', function playMedia() {
-    setTimeout(() => {
+  document.addEventListener('click', function playMedia() ;
   const mainTitle = document.getElementById('main-title');
-  const subTitle = document.getElementById('sub-title');
-
-  if (mainTitle) {
-    mainTitle.classList.add('fade-out');
-  }
-  if (subTitle) {
-    subTitle.classList.add('fade-out');
-  }
-}, 5000); // 等待5秒后再淡出标题
-    
-    const audio = document.getElementById('bg-music');
-    const video = document.getElementById('bg-video');
-if (video) {
-  video.play().catch((err) => {
-    console.log('视频播放失败', err);
-  });
-}
-    const startText = document.getElementById('start-text');
+  const subTitle = document.getElementById('sub-title'
+  const audio = document.getElementById('bg-music');
+  const video = document.getElementById('bg-video');
+  const startText = document.getElementById('start-text');
 
     if (audio) {
       audio.play().catch(() => {});

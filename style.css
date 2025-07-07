@@ -65,7 +65,7 @@ h2 {
 
 /* 淡出类名 */
 .fade-out {
-  animation: fadeDisappear 2s ease-in-out forwards;
+  animation: fadeDisappear 5s ease-in-out forwards;
 }
 
 @keyframes fadeDisappear {

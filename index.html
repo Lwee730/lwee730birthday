@@ -28,6 +28,11 @@
     
     const audio = document.getElementById('bg-music');
     const video = document.getElementById('bg-video');
+if (video) {
+  video.play().catch((err) => {
+    console.log('视频播放失败', err);
+  });
+}
     const startText = document.getElementById('start-text');
 
     if (audio) {

@@ -30,22 +30,23 @@
       });
     }
 
-    // ✅ 等视频准备好再播放
     if (video) {
-      const tryPlayVideo = () => {
+      const waitForVideoToLoad = () => {
         if (video.readyState >= 3) {
-          console.log("🎬 视频已准备好，播放中...");
+          console.log("🎬 视频已准备好，开始播放");
           video.play().then(() => {
             console.log("🎬 视频播放成功");
           }).catch(err => {
             console.log("❌ 视频播放失败", err);
           });
         } else {
-          console.log("⏳ 视频未就绪，等待100ms后重试...");
-          setTimeout(tryPlayVideo, 100);
+          console.log("⏳ 视频未加载完成，100ms后重试...");
+          setTimeout(waitForVideoToLoad, 100);
         }
       };
-      tryPlayVideo();
+      waitForVideoToLoad();
+    } else {
+      console.log("🚫 没找到视频元素");
     }
 
     if (startText) startText.style.display = 'none';

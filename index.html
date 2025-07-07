@@ -22,7 +22,6 @@
 
     console.log("👆 点击页面了，准备播放视频和音乐");
 
-    // 播音乐
     if (audio) {
       audio.play().then(() => {
         console.log("🎵 音乐播放成功");
@@ -31,28 +30,31 @@
       });
     }
 
-    // 关键处理：等待一点时间后再尝试播放视频
-    setTimeout(() => {
-      if (video) {
-        console.log("⏳ 准备播放视频...");
-        video.play().then(() => {
-          console.log("🎬 视频播放成功");
-        }).catch(err => {
-          console.log("❌ 视频播放失败", err);
-        });
-      }
-    }, 300); // 延迟 300ms 播放视频，有助于解决 iOS 拦截
+    // ✅ 等视频准备好再播放
+    if (video) {
+      const tryPlayVideo = () => {
+        if (video.readyState >= 3) {
+          console.log("🎬 视频已准备好，播放中...");
+          video.play().then(() => {
+            console.log("🎬 视频播放成功");
+          }).catch(err => {
+            console.log("❌ 视频播放失败", err);
+          });
+        } else {
+          console.log("⏳ 视频未就绪，等待100ms后重试...");
+          setTimeout(tryPlayVideo, 100);
+        }
+      };
+      tryPlayVideo();
+    }
 
-    // 隐藏提示文字
     if (startText) startText.style.display = 'none';
 
-    // 渐隐标题
     setTimeout(() => {
       if (mainTitle) mainTitle.classList.add('fade-out');
       if (subTitle) subTitle.classList.add('fade-out');
     }, 5000);
 
-    // 移除事件绑定（只触发一次）
     document.removeEventListener('click', playMedia);
   });
 </script>

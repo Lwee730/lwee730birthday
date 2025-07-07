@@ -7,9 +7,32 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="start-text">tap to continue</div>
     <audio id="bg-music" autoplay loop muted>
   <source src="assets/bg-music.mp3" type="audio/mpeg" />
 </audio>
+    <script>
+  document.addEventListener('click', function playMedia() {
+    const audio = document.getElementById('bg-music');
+    const video = document.getElementById('bg-video');
+    const startText = document.getElementById('start-text');
+
+    if (audio) {
+      audio.play().catch(() => {});
+    }
+
+    if (video) {
+      video.play().catch(() => {});
+    }
+
+    if (startText) {
+      startText.style.display = 'none';
+    }
+
+    document.removeEventListener('click', playMedia);
+  });
+</script>
+    
     <!-- 视频背景 -->
     <video autoplay muted loop playsinline class="bg-video">
       <source src="assets/iphone-ad.mp4" type="video/mp4" />

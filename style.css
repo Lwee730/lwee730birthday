@@ -56,3 +56,14 @@ h2 {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
 }
+
+/* 初始状态：标题完全可见 */
+#main-title, #sub-title {
+  transition: opacity 5s ease;
+  opacity: 1;
+}
+
+/* 淡出类名 */
+.fade-out {
+  opacity: 0;
+}

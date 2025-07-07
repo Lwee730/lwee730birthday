@@ -20,8 +20,9 @@
     const mainTitle = document.getElementById('main-title');
     const subTitle = document.getElementById('sub-title');
 
-    console.log("👆 点击页面了，准备播放视频和音乐");
+    console.log("👆 页面已点击，开始尝试播放");
 
+    // 播放音乐
     if (audio) {
       audio.play().then(() => {
         console.log("🎵 音乐播放成功");
@@ -30,23 +31,24 @@
       });
     }
 
+    // 播放视频（暴力兼容模式）
     if (video) {
-      const waitForVideoToLoad = () => {
-        if (video.readyState >= 3) {
-          console.log("🎬 视频已准备好，开始播放");
-          video.play().then(() => {
-            console.log("🎬 视频播放成功");
-          }).catch(err => {
-            console.log("❌ 视频播放失败", err);
-          });
-        } else {
-          console.log("⏳ 视频未加载完成，100ms后重试...");
-          setTimeout(waitForVideoToLoad, 100);
-        }
+      let attempt = 0;
+      const tryPlay = () => {
+        video.play().then(() => {
+          console.log("🎬 视频播放成功");
+        }).catch(err => {
+          attempt++;
+          console.log(`❌ 第 ${attempt} 次播放失败，原因:`, err);
+          if (attempt < 10) {
+            setTimeout(tryPlay, 1000); // 每秒重试一次
+          } else {
+            console.log(" 视频最终播放失败");
+          }
+        });
       };
-      waitForVideoToLoad();
-    } else {
-      console.log("🚫 没找到视频元素");
+
+      setTimeout(tryPlay, 500); // 延迟 0.5 秒后尝试第一次
     }
 
     if (startText) startText.style.display = 'none';

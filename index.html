@@ -22,6 +22,14 @@
 
     console.log("👆 页面已点击，开始尝试播放");
 
+    setTimeout(() => {
+  const mainTitle = document.getElementById('main-title');
+  const subTitle = document.getElementById('sub-title');
+
+  if (mainTitle) mainTitle.classList.add('fade-out');
+  if (subTitle) subTitle.classList.add('fade-out');
+}, 5000); // 延迟 5 秒开始渐隐
+
     // 播放音乐
     if (audio) {
       audio.play().then(() => {
@@ -75,8 +83,8 @@
 </script>
 
     <!-- 正文内容 -->
-    <h1>LWEE0730</h1>
-    <h2>One more thing</h2>
+    <h1 id="main-title">LWEE0730</h1>
+    <h2 id="sub-title">One more thing</h2>
 
   <script>
   document.addEventListener('click', function playMedia() {

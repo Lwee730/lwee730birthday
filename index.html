@@ -13,6 +13,17 @@
 </audio>
     <script>
   document.addEventListener('click', function playMedia() {
+    setTimeout(() => {
+  const mainTitle = document.getElementById('main-title');
+  const subTitle = document.getElementById('sub-title');
+
+  if (mainTitle) {
+    mainTitle.classList.add('fade-out');
+  }
+  if (subTitle) {
+    subTitle.classList.add('fade-out');
+  }
+}, 5000); // 等待5秒后再淡出标题
     const audio = document.getElementById('bg-music');
     const video = document.getElementById('bg-video');
     const startText = document.getElementById('start-text');
@@ -47,6 +58,8 @@
 </script>
 
     <!-- 正文内容 -->
+    <h1 id="main-title">LWE0730</h1>
+<h2 id="sub-title">One more thing.</h2>
     <h1>LWEE0730</h1>
     <h2>One more thing</h2>
 

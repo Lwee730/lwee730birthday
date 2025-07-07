@@ -66,4 +66,5 @@ h2 {
 /* 淡出类名 */
 .fade-out {
   opacity: 0;
+  transition:opacity 2s ease-in-out;
 }

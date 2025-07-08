@@ -1,19 +1,13 @@
 gsap.registerPlugin(ScrollTrigger);
 
 // 触发播放
-button.addEventListener("click", async () => {
-  try {
-    await video.play();
-    await music.play();
-    console.log("音乐播放成功");
-  } catch (e) {
-    console.warn("音乐播放失败", e);
-  }
-  button.style.display = "none";
-});
+const video = document.getElementById("main-video");
+const music = document.getElementById("bg-music");
+const button = document.getElementById("playButton");
+
 button.addEventListener("click", () => {
-  video.play().catch(() => {});
-  music.play().catch(() => {});
+  video.play();
+  music.play();
   button.style.display = "none";
 });
 

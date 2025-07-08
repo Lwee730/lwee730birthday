@@ -14,8 +14,10 @@ button.addEventListener("click", () => {
   setTimeout(() => {
     document.getElementById("main-title").style.transition = "opacity 1.5s";
     document.getElementById("sub-title").style.transition = "opacity 1.5s";
+    document.getElementById("trd-title").style.transition = "opacity 1.5s";
     document.getElementById("main-title").style.opacity = 0;
     document.getElementById("sub-title").style.opacity = 0;
+    document.getElementById("trd-title").style.opacity = 0;
   }, 3500); // 5000毫秒 = 5秒
 });
 // 滚动动画
@@ -31,6 +33,17 @@ gsap.to("#main-title", {
 });
 
 gsap.to("#sub-title", {
+  opacity: 0,
+  y: 50,
+  scrollTrigger: {
+    trigger: ".intro",
+    start: "top top",
+    end: "bottom top",
+    scrub: true
+  }
+});
+
+gsap.to("#trd-title", {
   opacity: 0,
   y: 50,
   scrollTrigger: {

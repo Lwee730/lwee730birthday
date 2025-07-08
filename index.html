@@ -2,98 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LWE0730</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
-  <!-- 第一屏：点击播放页 -->
+
+  <!-- 第一屏：点击播放 -->
   <section class="intro">
-    <video id="main-video" src="assets/iphone-ad.mp4" muted></video>
-    <h1 id="main-title">LWE0730</h1>
-    <h2 id="sub-title">One more thing.</h2>
-    <button id="playButton">点击以继续</button>
+    <video id="main-video" src="assets/iphone-ad.mp4" muted playsinline></video>
+    <div class="intro-content">
+      <h1 id="main-title">LWE0730</h1>
+      <h2 id="sub-title">One more thing.</h2>
+      <button id="playButton">点击以继续</button>
+    </div>
     <audio id="bg-music" src="assets/song.mp3"></audio>
   </section>
 
-  <!-- 第二屏：滚动照片展示 -->
+  <!-- 第二屏：图文展示 -->
   <section class="panel image">
     <img src="assets/14pm2.jpg" alt="14pm" />
     <p>18岁的我，由我亲手发布。</p>
   </section>
 
-  <!-- 第三屏：滚动视频展示 -->
+  <!-- 第三屏：视频滚动展示 -->
   <section class="panel video">
-    <video id="scroll-video" src="assets/iphone-ad.mp4" muted loop></video>
+    <video id="scroll-video" src="assets/iphone-ad.mp4" muted loop playsinline></video>
     <p>重启人生系统：Version 18.0</p>
   </section>
 
-  gsap.registerPlugin(ScrollTrigger);
-
-const video = document.getElementById("main-video");
-const music = document.getElementById("bg-music");
-const button = document.getElementById("playButton");
-
-button.addEventListener("click", () => {
-  video.play();
-  music.play();
-  button.style.display = "none";
-});
-
-// GSAP 滚动动画
-gsap.to("#main-title", {
-  opacity: 0,
-  y: -50,
-  duration: 1.5,
-  scrollTrigger: {
-    trigger: ".intro",
-    start: "top top",
-    end: "bottom top",
-    scrub: true
-  }
-});
-
-gsap.to("#sub-title", {
-  opacity: 0,
-  y: 50,
-  duration: 1.5,
-  scrollTrigger: {
-    trigger: ".intro",
-    start: "top top",
-    end: "bottom top",
-    scrub: true
-  }
-});
-
-gsap.from(".panel.image p", {
-  opacity: 0,
-  y: 50,
-  scrollTrigger: {
-    trigger: ".panel.image",
-    start: "top 80%",
-    toggleActions: "play none none reverse"
-  }
-});
-
-gsap.from(".panel.video p", {
-  opacity: 0,
-  y: 50,
-  scrollTrigger: {
-    trigger: ".panel.video",
-    start: "top 80%",
-    toggleActions: "play none none reverse"
-  }
-});
-
-gsap.from("#scroll-video", {
-  opacity: 0,
-  scrollTrigger: {
-    trigger: ".panel.video",
-    start: "top 80%",
-    toggleActions: "play none none reverse"
-  }
-});
   <script src="script.js"></script>
 </body>
 </html>

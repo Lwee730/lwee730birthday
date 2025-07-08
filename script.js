@@ -9,8 +9,15 @@ button.addEventListener("click", () => {
   video.play();
   music.play();
   button.style.display = "none";
-});
 
+  // ⏱️ 延迟 5 秒后触发渐隐动画
+  setTimeout(() => {
+    document.getElementById("main-title").style.transition = "opacity 1.5s";
+    document.getElementById("sub-title").style.transition = "opacity 1.5s";
+    document.getElementById("main-title").style.opacity = 0;
+    document.getElementById("sub-title").style.opacity = 0;
+  }, 3500); // 5000毫秒 = 5秒
+});
 // 滚动动画
 gsap.to("#main-title", {
   opacity: 0,

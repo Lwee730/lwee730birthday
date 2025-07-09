@@ -11,11 +11,11 @@ html, body {
   color: white;
 }
 
-.fullscreen-image {
+.section {
   width: 100vw;
   height: 100vh;
-  object-fit: cover;
-  display: block;
+  position: relative;
+  overflow: hidden;
 }
 
 .intro video {

@@ -65,9 +65,9 @@ section {
 
 .panel.image img {
   max-width: 100vw;
-  height: auto;
-  border-radius: 20px;
-  margin-bottom: 20px;
+  height: 100;
+  border-radius: 12px;
+  margin-bottom: 0px;
 }
 
 .panel.video video {

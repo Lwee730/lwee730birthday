@@ -84,8 +84,8 @@ section {
   font-size: 20px;
   color: white;
   z-index: 999;
-  background-color: rgba(0, 0, 0, 0.4); /* 可选：半透明背景 */
+  background-color: rgba(0, 0, 0, 0.4);
   padding: 6px 12px;
   border-radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
-

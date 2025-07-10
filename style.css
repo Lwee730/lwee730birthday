@@ -89,3 +89,58 @@ section {
   z-index: 1000;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
+
+.message-button {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  z-index: 999;
+  background-color: #ffffff10;
+  color: white;
+  border: 1px solid #ffffff30;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 16px;
+  backdrop-filter: blur(6px);
+}
+
+.message-box {
+  position: fixed;
+  right: 20px;
+  bottom: 120px;
+  width: 300px;
+  padding: 15px;
+  background: #111;
+  color: white;
+  border-radius: 10px;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.message-box textarea {
+  width: 100%;
+  height: 80px;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 8px;
+  font-family: inherit;
+  resize: none;
+}
+
+.message-box button {
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#messageList {
+  margin-top: 15px;
+  font-size: 14px;
+  max-height: 150px;
+  overflow-y: auto;
+}

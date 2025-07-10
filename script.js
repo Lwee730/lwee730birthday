@@ -108,3 +108,64 @@ function updateCountdown() {
 // 每秒更新一次
 setInterval(updateCountdown, 1000);
 updateCountdown();
+
+const openBtn = document.getElementById("openMessage");
+const closeBtn = document.getElementById("closeMessage");
+const messageBox = document.getElementById("messageBox");
+const submitBtn = document.getElementById("submitMessage");
+const messageInput = document.getElementById("messageInput");
+const messageList = document.getElementById("messageList");
+
+// 载入本地留言
+window.onload = function () {
+  const saved = JSON.parse(localStorage.getItem("messages")) || [];
+  saved.forEach(msg => addMessage(msg));
+};
+
+function addMessage(msg) {
+  const p = document.createElement("p");
+  p.textContent = `匿名留言：${msg}`;
+  messageList.prepend(p);
+}
+
+openBtn.onclick = () => messageBox.style.display = "block";
+closeBtn.onclick = () => messageBox.style.display = "none";
+
+submitBtn.onclick = () => {
+  const msg = messageInput.value.trim();
+  if (msg) {
+    addMessage(msg);
+
+    // 保存到 localStorage
+    const existing = JSON.parse(localStorage.getItem("messages")) || [];
+    existing.unshift(msg);
+    localStorage.setItem("messages", JSON.stringify(existing));
+
+    messageInput.value = "";
+
+    // 显示提示动画
+    showSuccessAnimation();
+  }
+};
+
+// 动画提示
+function showSuccessAnimation() {
+  const success = document.createElement("div");
+  success.textContent = "🎉 祝福发送成功！";
+  success.style.position = "fixed";
+  success.style.top = "50%";
+  success.style.left = "50%";
+  success.style.transform = "translate(-50%, -50%)";
+  success.style.background = "#222";
+  success.style.color = "#fff";
+  success.style.padding = "14px 20px";
+  success.style.borderRadius = "10px";
+  success.style.zIndex = "2000";
+  success.style.fontSize = "18px";
+  success.style.boxShadow = "0 0 15px rgba(0,0,0,0.4)";
+  document.body.appendChild(success);
+
+  setTimeout(() => {
+    success.remove();
+  }, 2000);
+}

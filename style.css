@@ -78,14 +78,14 @@ section {
 
 .countdown-text {
   position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 20px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.75);
   color: white;
-  z-index: 999;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 6px 12px;
-  border-radius: 8px;
+  font-size: 18px;
+  padding: 10px 0;
+  z-index: 1000;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }

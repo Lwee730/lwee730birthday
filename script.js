@@ -169,3 +169,51 @@ function showSuccessAnimation() {
     success.remove();
   }, 2000);
 }
+
+// 歌曲列表（替换为你自己的）
+const songs = [
+  {
+    name: "生日快乐歌",
+    file: "assets/birthday.mp3"
+  },
+  {
+    name: "你最喜欢的歌",
+    file: "assets/favorite.mp3"
+  }
+];
+
+let currentSong = 0;
+let audio = new Audio(songs[currentSong].file);
+
+// 控件元素
+const musicToggle = document.getElementById("music-toggle");
+const musicPlayer = document.getElementById("music-player");
+const playBtn = document.getElementById("play-btn");
+const pauseBtn = document.getElementById("pause-btn");
+const nextBtn = document.getElementById("next-btn");
+const songTitle = document.getElementById("song-title");
+
+// 显示/隐藏播放器
+musicToggle.onclick = () => {
+  musicPlayer.style.display = musicPlayer.style.display === "none" ? "block" : "none";
+};
+
+// 播放按钮
+playBtn.onclick = () => {
+  audio.play();
+  songTitle.innerText = "当前曲目：" + songs[currentSong].name;
+};
+
+// 暂停按钮
+pauseBtn.onclick = () => {
+  audio.pause();
+};
+
+// 下一首按钮
+nextBtn.onclick = () => {
+  audio.pause();
+  currentSong = (currentSong + 1) % songs.length;
+  audio = new Audio(songs[currentSong].file);
+  audio.play();
+  songTitle.innerText = "当前曲目：" + songs[currentSong].name;
+};

@@ -170,7 +170,7 @@ function showSuccessAnimation() {
   }, 2000);
 }
 
-// 歌曲列表（替换为你自己的）
+// 歌曲列表
 const songs = [
   {
     name: "LWE25730生日主题曲-Suffocating",
@@ -182,7 +182,7 @@ const songs = [
   }
 ];
 
-let currentSong = 1;
+let currentSong = 0;
 let audio = new Audio(songs[currentSong].file);
 
 // 控件元素

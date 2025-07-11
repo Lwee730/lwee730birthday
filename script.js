@@ -178,14 +178,9 @@ const songs = [
   },
   {
     name: "未弄",
-    file: "assets/.mp3"
-  }，
-{
-    name: "未弄",
-    file: "assets/favorite.mp3"
-  }
-];
-
+    file: "assets/music.mp3"
+  },
+ 
 let currentSong = 0;
 let audio = new Audio(songs[currentSong].file);
 

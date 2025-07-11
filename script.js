@@ -179,8 +179,8 @@ const songs = [
   {
     name: "未弄",
     file: "assets/.mp3"
-  }
-  {
+  }，
+{
     name: "未弄",
     file: "assets/favorite.mp3"
   }

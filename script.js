@@ -181,7 +181,7 @@ const songs = [
     file: "assets/music.mp3"
   },
  
-let currentSong = 0;
+let currentSong = 1;
 let audio = new Audio(songs[currentSong].file);
 
 // 控件元素

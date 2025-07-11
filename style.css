@@ -144,3 +144,36 @@ section {
   max-height: 150px;
   overflow-y: auto;
 }
+
+#music-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #111;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+#music-player {
+  display: none;
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  z-index: 999;
+}
+
+#music-player button {
+  background: #333;
+  color: #fff;
+  margin: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+}

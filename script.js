@@ -179,8 +179,9 @@ const songs = [
   {
     name: "未弄",
     file: "assets/music.mp3"
-  },
- 
+  }
+];
+
 let currentSong = 1;
 let audio = new Audio(songs[currentSong].file);
 

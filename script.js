@@ -173,11 +173,15 @@ function showSuccessAnimation() {
 // 歌曲列表（替换为你自己的）
 const songs = [
   {
-    name: "生日快乐歌",
-    file: "assets/birthday.mp3"
+    name: "LWE25730生日主题曲-Suffocating",
+    file: "assets/bg-music.mp3"
   },
   {
-    name: "你最喜欢的歌",
+    name: "未弄",
+    file: "assets/.mp3"
+  }
+  {
+    name: "未弄",
     file: "assets/favorite.mp3"
   }
 ];

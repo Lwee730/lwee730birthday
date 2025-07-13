@@ -120,13 +120,38 @@ const messageList = document.getElementById("messageList");
 // 载入本地留言
 window.onload = function () {
   const saved = JSON.parse(localStorage.getItem("messages")) || [];
-  saved.forEach(msg => addMessage(msg));
+  saved.forEach((msg, i) => addMessage(msg, i));
 };
 
-function addMessage(msg) {
+function addMessage(msg, index) {
+  const container = document.createElement("div");
+  container.style.display = "flex";
+  container.style.justifyContent = "space-between";
+  container.style.alignItems = "center";
+  container.style.marginBottom = "8px";
+
   const p = document.createElement("p");
   p.textContent = `匿名留言：${msg}`;
-  messageList.prepend(p);
+  p.style.flex = "1";
+
+  const delBtn = document.createElement("button");
+  delBtn.textContent = "🗑️";
+  delBtn.style.background = "transparent";
+  delBtn.style.border = "none";
+  delBtn.style.cursor = "pointer";
+  delBtn.style.color = "#fff";
+  delBtn.title = "删除此留言";
+
+  delBtn.onclick = () => {
+    const existing = JSON.parse(localStorage.getItem("messages")) || [];
+    existing.splice(index, 1);
+    localStorage.setItem("messages", JSON.stringify(existing));
+    container.remove();
+  };
+
+  container.appendChild(p);
+  container.appendChild(delBtn);
+  messageList.prepend(container);
 }
 
 openBtn.onclick = () => messageBox.style.display = "block";

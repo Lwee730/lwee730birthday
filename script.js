@@ -15,7 +15,8 @@ button.addEventListener("click", () => {
   document.getElementById("main-title").classList.add("fade-out");
   document.getElementById("sub-title").classList.add("fade-out");
   document.getElementById("trd-title").classList.add("fade-out");
-}, 3500);
+}, 3500); // 5000毫秒 = 5秒
+})
 
 // 滚动动画
 gsap.to("#main-title", {

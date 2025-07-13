@@ -144,3 +144,8 @@ section {
   max-height: 150px;
   overflow-y: auto;
 }
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}

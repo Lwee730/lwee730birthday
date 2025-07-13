@@ -12,14 +12,11 @@ button.addEventListener("click", () => {
 
   // ⏱️ 延迟 5 秒后触发渐隐动画
   setTimeout(() => {
-    document.getElementById("main-title").style.transition = "opacity 1.5s";
-    document.getElementById("sub-title").style.transition = "opacity 1.5s";
-    document.getElementById("trd-title").style.transition = "opacity 1.5s";
-    document.getElementById("main-title").style.opacity = 0;
-    document.getElementById("sub-title").style.opacity = 0;
-    document.getElementById("trd-title").style.opacity = 0;
-  }, 3500); // 5000毫秒 = 5秒
-});
+  document.getElementById("main-title").classList.add("fade-out");
+  document.getElementById("sub-title").classList.add("fade-out");
+  document.getElementById("trd-title").classList.add("fade-out");
+}, 3500);
+
 // 滚动动画
 gsap.to("#main-title", {
   opacity: 0,

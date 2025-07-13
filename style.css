@@ -93,54 +93,83 @@ section {
 .message-button {
   position: fixed;
   right: 20px;
-  bottom: 80px;
-  z-index: 999;
-  background-color: #ffffff10;
+  bottom: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: white;
-  border: 1px solid #ffffff30;
-  border-radius: 8px;
-  padding: 10px 14px;
+  padding: 10px 16px;
+  font-size: 15px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 16px;
-  backdrop-filter: blur(6px);
+  z-index: 999;
+  transition: background 0.3s;
+}
+
+.message-button:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .message-box {
   position: fixed;
   right: 20px;
-  bottom: 120px;
-  width: 300px;
-  padding: 15px;
-  background: #111;
-  color: white;
-  border-radius: 10px;
-  display: none;
+  bottom: 100px;
+  width: 320px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: #fff;
   z-index: 1000;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  display: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+}
+
+.message-box h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #fff;
 }
 
 .message-box textarea {
   width: 100%;
   height: 80px;
-  margin-top: 10px;
-  border-radius: 5px;
-  padding: 8px;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  outline: none;
   font-family: inherit;
   resize: none;
+  margin-bottom: 10px;
 }
 
 .message-box button {
-  margin-top: 10px;
-  margin-right: 10px;
-  padding: 6px 10px;
-  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: white;
   border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  margin-right: 8px;
   cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.message-box button:hover {
+  background-color: rgba(255, 255, 255, 0.18);
 }
 
 #messageList {
-  margin-top: 15px;
-  font-size: 14px;
-  max-height: 150px;
+  margin-top: 12px;
+  max-height: 140px;
   overflow-y: auto;
+  font-size: 14px;
+  color: #ddd;
 }
+
